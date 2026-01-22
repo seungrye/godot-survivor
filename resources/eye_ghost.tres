@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://hk3fnx507jag"]
+
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://enemy_type.gd" id="1_brphm"]
+[ext_resource type="Texture2D" uid="uid://f71xta30xt5g" path="res://assets/RPG Battlers 3/5 v1.png" id="2_h3wnt"]
+
+[resource]
+script = ExtResource("1_brphm")
+title = "Eye Ghost"
+texture = ExtResource("2_h3wnt")
+metadata/_custom_type_script = "uid://vuj7hopngcpx"

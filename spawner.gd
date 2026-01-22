@@ -3,6 +3,7 @@ extends Node2D
 
 @export var player_reference : CharacterBody2D
 @export var enemy_reference : PackedScene
+@export var enemy_types: Array[Enemy]
 
 var distance : float = 400
 
@@ -21,6 +22,7 @@ var second: int:
 
 func spawn(pos: Vector2):
 	var enemy_instance = self.enemy_reference.instantiate()
+	enemy_instance.type = self.enemy_types[min(self.minute, self.enemy_types.size() - 1)] # 매 분마다 다른 적 웨이브가 발생하도록 처리
 	enemy_instance.position = pos
 	enemy_instance.player_reference = player_reference
 	
