@@ -4,6 +4,11 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var health: float = 100:
+	set(value):
+		health = value
+		%Health.value = value
+
 func _physics_process(delta: float) -> void:
 	self.velocity = Input.get_vector("left", "right", "up", "down") * SPEED
 	self.move_and_collide(velocity * delta)
@@ -26,3 +31,15 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 #
 	#move_and_slide()
+
+func take_damage(amount):
+	self.health -= amount
+	print(amount)
+
+func _on_self_damage_body_entered(body: Node2D) -> void:
+	take_damage(body.damage)
+
+
+func _on_timer_timeout() -> void:
+	%Collision.set_deferred("disabled", true)
+	%Collision.set_deferred("disabled", false)

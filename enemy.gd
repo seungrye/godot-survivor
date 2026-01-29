@@ -5,16 +5,18 @@ const JUMP_VELOCITY = -400.0
 
 @export var player_reference: CharacterBody2D
 var direction: Vector2
+var damage: float
 
 var type: Enemy:
 	set(value):
 		type = value
 		$Sprite2D.texture = value.texture
+		damage = value.damage
 
 func _physics_process(delta: float) -> void:
 	# Note. normalized 를 하는 이유는 대각선으로 이동시 더 빠르게 이동되는 현상을 방지하기 위함
 	self.velocity = (player_reference.position - self.position).normalized() * SPEED
-	move_and_collide(self.velocity * delta)
+	self.move_and_collide(self.velocity * delta)
 
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.
