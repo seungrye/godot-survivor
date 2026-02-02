@@ -50,8 +50,8 @@ func _on_timer_timeout() -> void:
 	self.amount(second % 10)
 
 func _on_pattern_timeout() -> void:
-	pass # Replace with function body.
-
+	for i in range(75):
+		spawn(self.get_random_position())
 
 func _on_elite_timeout() -> void:
 	pass # Replace with function body.
