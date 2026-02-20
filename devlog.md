@@ -1,6 +1,8 @@
 DEV LOG
 -------
 
+* 260221
+  * https://www.youtube.com/watch?v=ihlMhk1DzQU&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX 의 Limit Testing 까지 따라함.
 * 260202
   * https://www.youtube.com/watch?v=ihlMhk1DzQU&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX 의 Enemy Pattern Wave 까지 따라함.
 * 260129
