@@ -33,13 +33,17 @@ func _physics_process(delta: float) -> void:
 	# Note. normalized 를 하는 이유는 대각선으로 이동시 더 빠르게 이동되는 현상을 방지하기 위함
 	self.velocity = (player_reference.position - self.position).normalized() * SPEED
 
-	knockback = knockback.move_toward(Vector2.ZERO, 1)
-	velocity += knockback
+	# 만약 내가 knockback 을 받은 상태라면, knockback 을 서서히(1씩) 줄임.
+	self.knockback = self.knockback.move_toward(Vector2.ZERO, 1)
+	# 넉백이 있다면 속도에 반영
+	self.velocity += self.knockback
 
-	# Note. 움직일때 다른 몹과 충돌(collide) 가 발생할 경우, knockback 을 적용함.
+	# Note. 움직일때 다른 몹과 충돌(collide) 가 발생할 경우, 상대방에게 knockback 을 적용함.
 	var collider:KinematicCollision2D = self.move_and_collide(self.velocity * delta)
 	if collider:
-		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 70
+		# 내가 부딪힌 상대방을 내 반대 방향으로 밀어냄
+		var target = collider.get_collider()
+		target.knockback = (target.global_position - self.global_position).normalized() * 70
 		
 
 #func _physics_process(delta: float) -> void:
