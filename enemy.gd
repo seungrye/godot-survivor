@@ -12,6 +12,9 @@ var elite: bool = false:
 		if value:
 			$Sprite2D.material = load("res://shaders/rainbow.tres")
 			self.scale = Vector2(1.5, 1.5)
+			#self.scale = Vector2(2.5, 2.5)
+		#else:
+			#self.scale = Vector2(2, 2)
 
 var type: Enemy:
 	set(value):
@@ -20,6 +23,11 @@ var type: Enemy:
 		damage = value.damage
 
 func _physics_process(delta: float) -> void:
+	# Note. 주인공과 거리가 일정 이상 멀어지면(화면 밖), 삭제 처리
+	var separation = (player_reference.position - position).length()
+	if separation >= 1000 and not elite:
+		queue_free()
+		
 	# Note. normalized 를 하는 이유는 대각선으로 이동시 더 빠르게 이동되는 현상을 방지하기 위함
 	self.velocity = (player_reference.position - self.position).normalized() * SPEED
 	self.move_and_collide(self.velocity * delta)

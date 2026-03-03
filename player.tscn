@@ -12,6 +12,7 @@ size = Vector2(20, 20)
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_4flbx")
+radius = 600.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_onrkg")

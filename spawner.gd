@@ -5,7 +5,8 @@ extends Node2D
 @export var enemy_reference : PackedScene
 @export var enemy_types: Array[Enemy]
 
-var distance : float = 400
+var distance : float = 700
+var can_spawn : bool = true
 
 var minute: int:
 	set(value):
@@ -19,8 +20,18 @@ var second: int:
 			second -= 10
 			minute += 1
 		%Second.text = str(second).lpad(2, '0')
+		
+func _physics_process(delta: float) -> void:
+	if get_tree().get_node_count_in_group("Enemy") < 700:
+		can_spawn = true
+	else:
+		can_spawn = false
 
 func spawn(pos: Vector2, elite: bool = false):
+	# elite 봅을 생성하는 경우가 아니라면, can_spawn 이 true 일때만 몹 생성 가능하도록 제한
+	if not can_spawn and not elite:
+		return
+		
 	var enemy_instance = self.enemy_reference.instantiate()
 	enemy_instance.type = self.enemy_types[min(self.minute, self.enemy_types.size() - 1)] # 매 분마다 다른 적 웨이브가 발생하도록 처리
 	enemy_instance.position = pos

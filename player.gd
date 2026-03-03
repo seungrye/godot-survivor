@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+@export var draw_radius: bool = false # 주인공 주위 영역을 출력
+@export var radius: float = 100.0  # 원의 반지름
+@export var color: Color = Color.CYAN  # 원의 색상
+@export var line_width: float = 2.0  # 선의 굵기
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -12,6 +16,17 @@ var health: float = 100:
 func _physics_process(delta: float) -> void:
 	self.velocity = Input.get_vector("left", "right", "up", "down") * SPEED
 	self.move_and_collide(velocity * delta)
+	
+#func _ready() -> void:
+	#self.scale = Vector2(2, 2)
+
+func _draw():
+	# 채워진 원을 그릴 때
+	# draw_circle(Vector2.ZERO, radius, Color(color.r, color.g, color.b, 0.3))
+	
+	# 테두리만 그릴 때 (더 효과적)
+	if draw_radius:
+		draw_arc(Vector2.ZERO, radius, 0, TAU, 64, color, line_width, true)
 
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.
