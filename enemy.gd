@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 @export var player_reference: CharacterBody2D
 var direction: Vector2
 var damage: float
+var knockback : Vector2
+
 var elite: bool = false:
 	set(value):
 		elite = value
@@ -30,7 +32,15 @@ func _physics_process(delta: float) -> void:
 		
 	# Note. normalized 를 하는 이유는 대각선으로 이동시 더 빠르게 이동되는 현상을 방지하기 위함
 	self.velocity = (player_reference.position - self.position).normalized() * SPEED
-	self.move_and_collide(self.velocity * delta)
+
+	knockback = knockback.move_toward(Vector2.ZERO, 1)
+	velocity += knockback
+
+	# Note. 움직일때 다른 몹과 충돌(collide) 가 발생할 경우, knockback 을 적용함.
+	var collider:KinematicCollision2D = self.move_and_collide(self.velocity * delta)
+	if collider:
+		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 70
+		
 
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.
