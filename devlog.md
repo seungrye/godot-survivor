@@ -1,5 +1,7 @@
 DEV LOG
 -------
+* 260312
+  * https://www.youtube.com/watch?v=R_ZFRA1_ZGc&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=2 의 Nearest Enemy from Player 까지 따라함.
 * 260303
   * https://www.youtube.com/watch?v=ihlMhk1DzQU&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=1 완료함.
   * https://www.youtube.com/watch?v=R_ZFRA1_ZGc&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=2 진행 해야 함.
