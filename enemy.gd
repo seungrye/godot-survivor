@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 var direction: Vector2
 var damage: float
 var knockback : Vector2
+var separation: float
 
 var elite: bool = false:
 	set(value):
@@ -25,11 +26,21 @@ var type: Enemy:
 		damage = value.damage
 
 func _physics_process(delta: float) -> void:
+	self.check_separation(delta)
+	self.knockback_update(delta)
+
+func check_separation(_delta):
 	# Note. 주인공과 거리가 일정 이상 멀어지면(화면 밖), 삭제 처리
-	var separation = (player_reference.position - position).length()
+	separation = (player_reference.position - self.position).length()
 	if separation >= 1000 and not elite:
 		queue_free()
-		
+
+	# 주인공이 알고있는 (가장 가까운)적과의 거리보다 현재 적(self) 가 더 가깝다면
+	# 가장 가까운 적(참조)을 갱신
+	if separation < player_reference.nearest_enemy_distance:
+		player_reference.nearest_enemy = self
+
+func knockback_update(delta):
 	# Note. normalized 를 하는 이유는 대각선으로 이동시 더 빠르게 이동되는 현상을 방지하기 위함
 	self.velocity = (player_reference.position - self.position).normalized() * SPEED
 
@@ -44,7 +55,6 @@ func _physics_process(delta: float) -> void:
 		# 내가 부딪힌 상대방을 내 반대 방향으로 밀어냄
 		var target = collider.get_collider()
 		target.knockback = (target.global_position - self.global_position).normalized() * 70
-		
 
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.
