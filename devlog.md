@@ -1,6 +1,8 @@
 DEV LOG
 -------
 
+* 260323
+  * https://www.youtube.com/watch?v=R_ZFRA1_ZGc&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=2 의 Weaapon Slot 까지 따라함.
 * 260318
   * https://www.youtube.com/watch?v=R_ZFRA1_ZGc&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=2 의 Weaapon Resource 까지 따라함.
 * 260312
