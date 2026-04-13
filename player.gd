@@ -61,7 +61,7 @@ func take_damage(amount):
 	print(amount)
 
 func _on_self_damage_body_entered(body: Node2D) -> void:
-	take_damage(body.damage)
+	self.take_damage(body.damage)
 
 
 func _on_timer_timeout() -> void:

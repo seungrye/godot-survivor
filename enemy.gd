@@ -4,6 +4,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 @export var player_reference: CharacterBody2D
+var damage_popup_node = preload("res://damage.tscn")
 var direction: Vector2
 var damage: float
 var knockback : Vector2
@@ -56,6 +57,15 @@ func knockback_update(delta):
 		var target = collider.get_collider()
 		target.knockback = (target.global_position - self.global_position).normalized() * 70
 
+func damage_popup(amount):
+	var popup = damage_popup_node.instantiate()
+	popup.text = str(amount)
+	popup.position = position + Vector2(-50, -25) # why -50, -25??
+	self.get_tree().current_scene.add_child(popup)
+	
+func take_damage(amount):
+	self.damage_popup(amount)
+	
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.
 	#if not is_on_floor():
