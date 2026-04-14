@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8k8rcxwhuaxk"]
 
 [ext_resource type="Script" uid="uid://cfqvkjqc3gvof" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="PackedScene" path="res://slot.tscn" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://cmmwr2by6ps8u" path="res://slot.tscn" id="2_i3pqv"]
 [ext_resource type="Resource" uid="uid://b2vrgioigjg1c" path="res://resources/weapons/magic_wand.tres" id="3_hqtel"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_onrkg"]
