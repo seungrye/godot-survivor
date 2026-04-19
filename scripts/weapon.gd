@@ -11,7 +11,7 @@ class_name Weapon
 
 # variable to preload projectile node
 @export var projectile_node_reference: PackedScene \
-	= preload("res://projectile.tscn")
+	= preload("res://scenes/projectile.tscn")
 
 # abstract method that will be overriden in Concrete Class
 func activate(_source, _target, _scene_tree):

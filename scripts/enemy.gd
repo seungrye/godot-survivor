@@ -4,7 +4,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 @export var player_reference: CharacterBody2D
-var damage_popup_node = preload("res://damage.tscn")
+var damage_popup_node = preload("res://scenes/damage.tscn")
 var direction: Vector2
 var damage: float
 var knockback : Vector2
