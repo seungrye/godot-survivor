@@ -1,6 +1,8 @@
 DEV LOG
 -------
 
+* 260419
+  * https://www.youtube.com/watch?v=R_ZFRA1_ZGc&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=2 완료함.
 * 260414
   * https://www.youtube.com/watch?v=R_ZFRA1_ZGc&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_JOX&index=2 의 Particle Effect 까지 따라함.
 * 260413
