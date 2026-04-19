@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_ooief")
-title = "Magic Want"
+title = "Magic Wand"
 texture = ExtResource("3_sovce")
 damage = 1.0
 cooldown = 1.0
