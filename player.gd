@@ -19,7 +19,7 @@ var nearest_enemy_distance: float = INF
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(nearest_enemy): # store when the instance is valid
 		nearest_enemy_distance = nearest_enemy.separation
-		print(nearest_enemy.name)
+		#print(nearest_enemy.name)
 	else:
 		nearest_enemy_distance = INF
 		
@@ -58,7 +58,7 @@ func _draw():
 
 func take_damage(amount):
 	self.health -= amount
-	print(amount)
+	#print(amount)
 
 func _on_self_damage_body_entered(body: Node2D) -> void:
 	self.take_damage(body.damage)
