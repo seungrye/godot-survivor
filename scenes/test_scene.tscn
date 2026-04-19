@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=4 uid="uid://dhgn7k2yqxrj6"]
 
 [ext_resource type="Texture2D" uid="uid://c8g2n4wiifd4n" path="res://assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_coq8p"]
-[ext_resource type="PackedScene" uid="uid://dm8l0hifraf62" path="res://spawner.tscn" id="1_ia1lp"]
-[ext_resource type="PackedScene" uid="uid://8k8rcxwhuaxk" path="res://player.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://dm8l0hifraf62" path="res://scenes/spawner.tscn" id="1_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://8k8rcxwhuaxk" path="res://scenes/player.tscn" id="1_uhqqe"]
 [ext_resource type="Texture2D" uid="uid://bc0viviru22lq" path="res://assets/TopDownFantasy-Forest/Decorations/Decorations.png" id="2_2nij2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cbxl"]

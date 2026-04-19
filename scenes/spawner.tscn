@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dm8l0hifraf62"]
 
-[ext_resource type="Script" uid="uid://1p0vvefs3kxv" path="res://spawner.gd" id="1_yp5lu"]
-[ext_resource type="PackedScene" uid="uid://dfiwq2hd07ym6" path="res://enemy.tscn" id="2_ttk4a"]
-[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://enemy_type.gd" id="3_qmymf"]
+[ext_resource type="Script" uid="uid://1p0vvefs3kxv" path="res://scripts/spawner.gd" id="1_yp5lu"]
+[ext_resource type="PackedScene" uid="uid://dfiwq2hd07ym6" path="res://scenes/enemy.tscn" id="2_ttk4a"]
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy_type.gd" id="3_qmymf"]
 [ext_resource type="Resource" uid="uid://t1k2uikgfw7j" path="res://resources/enemies/cube.tres" id="4_bt5rc"]
 [ext_resource type="Resource" uid="uid://dl6qf0kkyhfld" path="res://resources/enemies/eye.tres" id="5_g67ry"]
 [ext_resource type="Resource" uid="uid://hk3fnx507jag" path="res://resources/enemies/eye_ghost.tres" id="6_lvome"]

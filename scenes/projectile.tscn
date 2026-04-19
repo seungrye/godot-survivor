@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bo68pjymiw1mb"]
+[gd_scene load_steps=9 format=3 uid="uid://bo68pjymiw1mb"]
 
-[ext_resource type="Script" uid="uid://dlhq45eo0yhh3" path="res://projectile.gd" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://dlhq45eo0yhh3" path="res://scripts/projectile.gd" id="1_a85iw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a85iw"]
 size = Vector2(10, 10)
@@ -37,20 +37,20 @@ turbulence_enabled = true
 turbulence_noise_speed = Vector3(0, 1, 0)
 turbulence_influence_max = 0.25300002
 
-[node name="Projectile" type="Area2D" unique_id=1977484565]
+[node name="Projectile" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_a85iw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=476684522]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_a85iw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133297274]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qxf0c")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=73036399]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=814585521]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_2xblw")
 
