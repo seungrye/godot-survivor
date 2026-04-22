@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Gem" format=3 uid="uid://b4xikg1il4ib1"]
+
+[ext_resource type="Texture2D" uid="uid://d38fmmxvamcey" path="res://assets/pixelfood/22_cheesecake.png" id="1_ws474"]
+[ext_resource type="Script" uid="uid://b0ddeo3lbwuhv" path="res://scripts/gem.gd" id="2_lg6ls"]
+
+[resource]
+script = ExtResource("2_lg6ls")
+xp = 2.0
+title = "Cheese Cake"
+icon = ExtResource("1_ws474")
+description = "Gains Experience Points."
+metadata/_custom_type_script = "uid://b0ddeo3lbwuhv"

@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://hk3fnx507jag"]
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://hk3fnx507jag"]
 
-[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy_type.gd" id="1_brphm"]
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy-type.gd" id="1_brphm"]
+[ext_resource type="Script" uid="uid://djgq25nbo07bv" path="res://scripts/pickup-resource.gd" id="1_o50mq"]
+[ext_resource type="Resource" uid="uid://drqufrtc3vfng" path="res://resources/pickups/pie.tres" id="2_8j0r8"]
 [ext_resource type="Texture2D" uid="uid://f71xta30xt5g" path="res://assets/RPG Battlers 3/5 v1.png" id="2_h3wnt"]
+[ext_resource type="Resource" uid="uid://b4xikg1il4ib1" path="res://resources/pickups/cheese_cake.tres" id="3_6j1ny"]
 
 [resource]
 script = ExtResource("1_brphm")
@@ -9,4 +12,5 @@ title = "Eye Ghost"
 texture = ExtResource("2_h3wnt")
 health = 3.0
 damage = 5.0
+drops = Array[ExtResource("1_o50mq")]([ExtResource("2_8j0r8"), ExtResource("3_6j1ny")])
 metadata/_custom_type_script = "uid://vuj7hopngcpx"

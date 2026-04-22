@@ -10,10 +10,13 @@ var damage: float
 var knockback : Vector2
 var separation: float
 
+var drop = preload("res://scenes/pickups_area_2d.tscn")
+
 var health: float:
 	set(value):
 		health = value
 		if health <= 0:
+			drop_item()
 			queue_free()
 
 var elite: bool = false:
@@ -79,6 +82,19 @@ func take_damage(amount):
 	
 	self.damage_popup(amount)
 	self.health -= amount
+	
+func drop_item():
+	if self.type.drops.size() == 0:
+		return
+		
+	var item = self.type.drops.pick_random()
+	var item_to_drop = self.drop.instantiate()
+	
+	item_to_drop.type = item
+	item_to_drop.position = self.position
+	item_to_drop.player_reference = self.player_reference
+	
+	get_tree().current_scene.call_deferred('add_child', item_to_drop)
 	
 #func _physics_process(delta: float) -> void:
 	## Add the gravity.

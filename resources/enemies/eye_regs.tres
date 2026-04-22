@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://dx7kdf4is67ft"]
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://dx7kdf4is67ft"]
 
-[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy_type.gd" id="1_n8xub"]
+[ext_resource type="Script" uid="uid://djgq25nbo07bv" path="res://scripts/pickup-resource.gd" id="1_c48wo"]
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy-type.gd" id="1_n8xub"]
 [ext_resource type="Texture2D" uid="uid://1wncmsn65x05" path="res://assets/RPG Battlers 3/3 v1.png" id="2_brhlc"]
+[ext_resource type="Resource" uid="uid://drqufrtc3vfng" path="res://resources/pickups/pie.tres" id="2_m5iik"]
+[ext_resource type="Resource" uid="uid://b4xikg1il4ib1" path="res://resources/pickups/cheese_cake.tres" id="3_ylxu7"]
 
 [resource]
 script = ExtResource("1_n8xub")
@@ -9,4 +12,5 @@ title = "Eye Regs"
 texture = ExtResource("2_brhlc")
 health = 3.0
 damage = 7.0
+drops = Array[ExtResource("1_c48wo")]([ExtResource("2_m5iik"), ExtResource("3_ylxu7")])
 metadata/_custom_type_script = "uid://vuj7hopngcpx"

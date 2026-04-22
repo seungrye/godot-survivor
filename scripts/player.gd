@@ -16,6 +16,22 @@ var health: float = 100:
 var nearest_enemy: CharacterBody2D
 var nearest_enemy_distance: float = INF
 
+var xp: int = 0:
+	set(value):
+		xp = value
+		%"XP-TextureProgressBar".value = value
+		
+var total_xp: int = 0
+var level: int = 1:
+	set(value):
+		level = value
+		%"Level-Label".text = 'Lv ' + str(value)
+		
+		if level >= 3:
+			%"XP-TextureProgressBar".max_value = 20
+		elif level >= 7:
+			%"XP-TextureProgressBar".max_value = 40
+
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(nearest_enemy): # store when the instance is valid
 		nearest_enemy_distance = nearest_enemy.separation
@@ -25,7 +41,8 @@ func _physics_process(delta: float) -> void:
 		
 	self.velocity = Input.get_vector("left", "right", "up", "down") * SPEED
 	self.move_and_collide(velocity * delta)
-	
+	self.check_xp()
+
 #func _ready() -> void:
 	#self.scale = Vector2(2, 2)
 
@@ -67,3 +84,17 @@ func _on_self_damage_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	%Collision.set_deferred("disabled", true)
 	%Collision.set_deferred("disabled", false)
+
+func gain_xp(amount):
+	self.xp += amount
+	self.total_xp += amount
+
+func check_xp():
+	if self.xp > %"XP-TextureProgressBar".max_value:
+		self.xp -= %"XP-TextureProgressBar".max_value
+		level += 1
+
+
+func _on_magnet_area_2d_area_entered(area: Area2D) -> void:
+	if area.has_method('follow'):
+		area.follow(self)

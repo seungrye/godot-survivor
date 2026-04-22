@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://coolmq48w405"]
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://coolmq48w405"]
 
-[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy_type.gd" id="1_g7jr5"]
+[ext_resource type="Script" uid="uid://djgq25nbo07bv" path="res://scripts/pickup-resource.gd" id="1_fbqas"]
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy-type.gd" id="1_g7jr5"]
+[ext_resource type="Resource" uid="uid://b4xikg1il4ib1" path="res://resources/pickups/cheese_cake.tres" id="2_hee12"]
 [ext_resource type="Texture2D" uid="uid://cp54q6roew0o3" path="res://assets/RPG Battlers 3/4 v1.png" id="2_jnm51"]
+[ext_resource type="Resource" uid="uid://drqufrtc3vfng" path="res://resources/pickups/pie.tres" id="3_gcvi8"]
 
 [resource]
 script = ExtResource("1_g7jr5")
@@ -9,4 +12,5 @@ title = "Triple"
 texture = ExtResource("2_jnm51")
 health = 3.0
 damage = 9.0
+drops = Array[ExtResource("1_fbqas")]([ExtResource("2_hee12"), ExtResource("3_gcvi8")])
 metadata/_custom_type_script = "uid://vuj7hopngcpx"

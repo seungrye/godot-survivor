@@ -1,49 +1,49 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm8l0hifraf62"]
+[gd_scene format=3 uid="uid://dm8l0hifraf62"]
 
 [ext_resource type="Script" uid="uid://1p0vvefs3kxv" path="res://scripts/spawner.gd" id="1_yp5lu"]
 [ext_resource type="PackedScene" uid="uid://dfiwq2hd07ym6" path="res://scenes/enemy.tscn" id="2_ttk4a"]
-[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy_type.gd" id="3_qmymf"]
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy-type.gd" id="3_qmymf"]
 [ext_resource type="Resource" uid="uid://t1k2uikgfw7j" path="res://resources/enemies/cube.tres" id="4_bt5rc"]
 [ext_resource type="Resource" uid="uid://dl6qf0kkyhfld" path="res://resources/enemies/eye.tres" id="5_g67ry"]
 [ext_resource type="Resource" uid="uid://hk3fnx507jag" path="res://resources/enemies/eye_ghost.tres" id="6_lvome"]
 [ext_resource type="Resource" uid="uid://dx7kdf4is67ft" path="res://resources/enemies/eye_regs.tres" id="7_sy5nt"]
 [ext_resource type="Resource" uid="uid://coolmq48w405" path="res://resources/enemies/triple.tres" id="8_iv4qy"]
 
-[node name="Spawner" type="Node2D"]
+[node name="Spawner" type="Node2D" unique_id=1933661679]
 script = ExtResource("1_yp5lu")
 enemy_reference = ExtResource("2_ttk4a")
 enemy_types = Array[ExtResource("3_qmymf")]([ExtResource("4_bt5rc"), ExtResource("5_g67ry"), ExtResource("6_lvome"), ExtResource("7_sy5nt"), ExtResource("8_iv4qy")])
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1726569582]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-offset_left = 1106.0
-offset_top = 4.0
-offset_right = 1148.0
-offset_bottom = 44.0
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=68182556]
+offset_left = 1040.0
+offset_top = 16.0
+offset_right = 1082.0
+offset_bottom = 56.0
 
-[node name="Minute" type="Label" parent="UI/HBoxContainer"]
+[node name="Minute" type="Label" parent="UI/HBoxContainer" unique_id=294550600]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="Label2" type="Label" parent="UI/HBoxContainer"]
+[node name="Label2" type="Label" parent="UI/HBoxContainer" unique_id=316716936]
 layout_mode = 2
 text = ":"
 
-[node name="Second" type="Label" parent="UI/HBoxContainer"]
+[node name="Second" type="Label" parent="UI/HBoxContainer" unique_id=1303529229]
 unique_name_in_owner = true
 layout_mode = 2
 text = "00"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1575887950]
 autostart = true
 
-[node name="Pattern" type="Timer" parent="."]
+[node name="Pattern" type="Timer" parent="." unique_id=576861329]
 wait_time = 10.0
 autostart = true
 
-[node name="Elite" type="Timer" parent="."]
+[node name="Elite" type="Timer" parent="." unique_id=199129085]
 wait_time = 9.0
 autostart = true
 

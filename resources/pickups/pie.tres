@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Gem" format=3 uid="uid://drqufrtc3vfng"]
+
+[ext_resource type="Texture2D" uid="uid://dhtti1fvrvnkt" path="res://assets/pixelfood/05_apple_pie.png" id="1_f40up"]
+[ext_resource type="Script" uid="uid://b0ddeo3lbwuhv" path="res://scripts/gem.gd" id="2_006s8"]
+
+[resource]
+script = ExtResource("2_006s8")
+xp = 1.0
+title = "Pie"
+icon = ExtResource("1_f40up")
+description = "Gains Experience Points."
+metadata/_custom_type_script = "uid://b0ddeo3lbwuhv"

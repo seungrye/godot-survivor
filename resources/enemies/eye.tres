@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://dl6qf0kkyhfld"]
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://dl6qf0kkyhfld"]
 
-[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy_type.gd" id="1_j8idg"]
+[ext_resource type="Script" uid="uid://djgq25nbo07bv" path="res://scripts/pickup-resource.gd" id="1_ap527"]
+[ext_resource type="Script" uid="uid://vuj7hopngcpx" path="res://scripts/enemy-type.gd" id="1_j8idg"]
 [ext_resource type="Texture2D" uid="uid://d0kql8tlnui3w" path="res://assets/RPG Battlers 3/1 v1.png" id="2_82i44"]
+[ext_resource type="Resource" uid="uid://drqufrtc3vfng" path="res://resources/pickups/pie.tres" id="2_foo05"]
 
 [resource]
 script = ExtResource("1_j8idg")
@@ -9,4 +11,5 @@ title = "Eye"
 texture = ExtResource("2_82i44")
 health = 3.0
 damage = 3.0
+drops = Array[ExtResource("1_ap527")]([ExtResource("2_foo05")])
 metadata/_custom_type_script = "uid://vuj7hopngcpx"
