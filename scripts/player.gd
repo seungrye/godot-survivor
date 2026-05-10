@@ -26,6 +26,7 @@ var level: int = 1:
 	set(value):
 		level = value
 		%"Level-Label".text = 'Lv ' + str(value)
+		%"Options-VBoxContainer".show_option()
 		
 		if level >= 3:
 			%"XP-TextureProgressBar".max_value = 20
