@@ -1,12 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://8k8rcxwhuaxk"]
+[gd_scene load_steps=17 format=3 uid="uid://8k8rcxwhuaxk"]
 
 [ext_resource type="Script" uid="uid://cfqvkjqc3gvof" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cmmwr2by6ps8u" path="res://scenes/slot.tscn" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://d38fmmxvamcey" path="res://assets/pixelfood/22_cheesecake.png" id="2_ur7pv"]
 [ext_resource type="Resource" uid="uid://b2vrgioigjg1c" path="res://resources/weapons/magic_wand.tres" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://cks4v7qqk0puc" path="res://assets/Dialog/FacesetBox.png" id="3_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://cmkl70fw21nfl" path="res://assets/under.png" id="4_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bgnpg5f8rxgjs" path="res://assets/over.png" id="5_fjrip"]
 [ext_resource type="Texture2D" uid="uid://bjws00giug8gk" path="res://assets/progress.png" id="6_smehm"]
 [ext_resource type="Script" uid="uid://fc73cpy83tgh" path="res://scenes/options_v_box_container.gd" id="7_fjrip"]
+
+[sub_resource type="Gradient" id="Gradient_d2wvv"]
+offsets = PackedFloat32Array(0.70731705, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3v2ag"]
+gradient = SubResource("Gradient_d2wvv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jej6c"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 1, 1)
+angle_min = -196.4
+angle_max = 73.20001
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_3v2ag")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_onrkg"]
 size = Vector2(20, 20)
@@ -25,6 +45,44 @@ script = ExtResource("1_4flbx")
 radius = 600.0
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Particle-GPUParticles2D" type="GPUParticles2D" parent="UI"]
+process_mode = 3
+visible = false
+position = Vector2(280, 0)
+amount = 70
+texture = ExtResource("2_ur7pv")
+process_material = SubResource("ParticleProcessMaterial_jej6c")
+
+[node name="Panel-NinePatchRect" type="NinePatchRect" parent="UI"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.75
+offset_top = -143.25
+offset_right = 353.75
+offset_bottom = 143.25
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_y4r1p")
+region_rect = Rect2(6, 6, 36, 36)
+
+[node name="Label" type="Label" parent="UI/Panel-NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 29.5
+offset_right = 36.0
+offset_bottom = 52.5
+grow_horizontal = 2
+text = "LEVEL UP"
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
 offset_left = 8.0
@@ -60,7 +118,7 @@ offset_right = 1144.0
 offset_bottom = 48.0
 text = "Lv 1"
 
-[node name="Options-VBoxContainer" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons")]
+[node name="Options-VBoxContainer" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -69,13 +127,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = -19.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_fjrip")
 weapons = NodePath("../Weapons")
+particles = NodePath("../Particle-GPUParticles2D")
+panel = NodePath("../Panel-NinePatchRect")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_onrkg")

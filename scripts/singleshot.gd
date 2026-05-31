@@ -18,3 +18,15 @@ func shoot(source, target, scene_tree):
 
 func activate(_source, _target, _scene_tree):
 	self.shoot(_source, _target, _scene_tree)
+
+func upgrade_item():
+	if not is_upgradable():
+		return
+		
+	var upgrade = upgrades[level - 1]
+	
+	damage += upgrade.damage
+	cooldown += upgrade.cooldown
+	speed += upgrade.speed
+	
+	level += 1
